@@ -1,351 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hasnain Yamin Sayyed | Cloud Engineer Portfolio</title>
-  <meta name="description" content="Portfolio of Hasnain Yamin Sayyed — Cloud Engineer specializing in AWS, Azure, Docker, Kubernetes, Terraform, Ansible, CI/CD, and Python."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/J6MDZ7S6VZ7vQv3uO3ZXl2b7xGTFeoDyAJ6Digw1k3D6Z0fjQX+0Gooy2cHpTB2w4Yx04R9NQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    :root{
-      --bg:#0b1020; --bg-alt:#0f1630; --card:#121a3a; --muted:#a6b1d1; --text:#ecf3ff; --brand:#62d0ff; --brand-2:#8a7dff; --accent:#26ffd3; --radius:18px; --shadow:0 10px 25px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.04);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif; color:var(--text); background:radial-gradient(1200px 700px at 10% -10%, rgba(98,208,255,.12), transparent 50%), radial-gradient(1000px 600px at 110% 10%, rgba(138,125,255,.12), transparent 50%), linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%); overflow-x:hidden}
-    a{color:var(--brand); text-decoration:none}
-    a:hover{color:#b0e6ff}
-    .container{width:min(1150px, 92%); margin-inline:auto}
-    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(10px); background:rgba(11,16,32,.6); border-bottom:1px solid rgba(255,255,255,.06)}
-    nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
-    .logo{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.3px}
-    .logo .mark{width:34px; height:34px; border-radius:12px; background:conic-gradient(from 210deg, var(--brand), var(--accent), var(--brand-2), var(--brand)); box-shadow:0 6px 18px rgba(98,208,255,.35)}
-    .nav-links{display:flex; gap:18px; flex-wrap:wrap}
-    .nav-links a{padding:10px 14px; border-radius:12px; color:var(--text); opacity:.9}
-    .nav-links a:hover{background:rgba(255,255,255,.06)}
-    .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:14px; border:1px solid rgba(255,255,255,.1); background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); box-shadow:var(--shadow)}
-    .btn.primary{background:linear-gradient(180deg, rgba(98,208,255,.35), rgba(138,125,255,.25)); border-color:rgba(255,255,255,.18)}
-    .hero{position:relative; padding:72px 0 40px}
-    .hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:center}
-    .hero h1{font-size:46px; line-height:1.08; margin:0 0 12px}
-    .hero h1 .name{background:linear-gradient(90deg, var(--brand), var(--accent), var(--brand-2)); -webkit-background-clip:text; background-clip:text; color:transparent}
-    .subtitle{font-size:18px; color:var(--muted)}
-    .badge-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
-    .chip{padding:8px 12px; border-radius:999px; background:rgba(98,208,255,.14); border:1px solid rgba(98,208,255,.32); color:#dff4ff; font-size:13px}
-    .hero .cta{margin-top:24px; display:flex; gap:12px; flex-wrap:wrap}
-    .hero .card{padding:18px; border-radius:var(--radius); background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); box-shadow:var(--shadow)}
-    .hero .stat-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
-    .stat{padding:18px; border-radius:14px; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); text-align:center}
-    .stat .num{font-weight:800; font-size:26px}
-    .stat .lbl{color:var(--muted); font-size:13px}
-    section{padding:70px 0}
-    .section-title{font-size:28px; font-weight:800; margin:0 0 18px}
-    .section-sub{color:var(--muted); margin:0 0 24px}
-    .timeline{position:relative; margin-left:8px}
-    .timeline::before{content:""; position:absolute; left:15px; top:0; bottom:0; width:2px; background:linear-gradient(180deg, rgba(98,208,255,.6), rgba(138,125,255,.3))}
-    .tl-item{position:relative; margin:20px 0 24px 0; padding-left:48px}
-    .dot{position:absolute; left:6px; top:6px; width:18px; height:18px; border-radius:50%; background:linear-gradient(180deg, var(--brand), var(--brand-2)); border:3px solid var(--bg)}
-    .tl-card{background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:16px; box-shadow:var(--shadow)}
-    .tl-header{display:flex; flex-wrap:wrap; align-items:center; gap:10px; justify-content:space-between}
-    .role{font-weight:700}
-    .meta{color:var(--muted); font-size:14px}
-    .tag{display:inline-block; padding:6px 10px; border-radius:999px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); font-size:12px; margin:6px 6px 0 0}
-    .grid{display:grid; gap:16px}
-    .grid.cards{grid-template-columns:repeat(12,1fr)}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:18px; box-shadow:var(--shadow)}
-    .project{grid-column:span 4}
-    .cert{grid-column:span 4}
-    .edu{grid-column:span 4}
-    .card h3{margin:0 0 8px}
-    .card p{color:var(--muted)}
-    .meta-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
-    .skill-wrap{display:flex; flex-wrap:wrap; gap:10px}
-    .skill{padding:10px 12px; border-radius:14px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); font-weight:600}
-    .lang{display:flex; align-items:center; justify-content:space-between; padding:12px 14px; border-radius:14px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08)}
-    .contact{display:grid; grid-template-columns:1fr 1fr; gap:16px}
-    .contact a{display:flex; align-items:center; gap:12px; padding:14px; border-radius:14px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1)}
-    footer{padding:34px 0; color:var(--muted); border-top:1px solid rgba(255,255,255,.06)}
-    @media (max-width: 980px){ .hero-grid{grid-template-columns:1fr} .project,.cert,.edu{grid-column:span 6} .contact{grid-template-columns:1fr} }
-    @media (max-width: 640px){ .grid.cards{grid-template-columns:repeat(6,1fr)} .project,.cert,.edu{grid-column:span 6} .hero h1{font-size:36px} }
-    .reveal{opacity:0; transform:translateY(24px); transition:opacity .8s ease, transform .8s ease}
-    .reveal.show{opacity:1; transform:none}
-    .orb{position:absolute; filter:blur(40px); opacity:.35; pointer-events:none; border-radius:50%}
-    .orb.o1{width:260px; height:260px; left:-60px; top:-60px; background:radial-gradient(circle, var(--brand), transparent 60%); animation:float1 12s ease-in-out infinite}
-    .orb.o2{width:220px; height:220px; right:-40px; bottom:-60px; background:radial-gradient(circle, var(--brand-2), transparent 60%); animation:float2 16s ease-in-out infinite}
-    @keyframes float1{50%{transform:translate(30px, 20px) scale(1.05)}}
-    @keyframes float2{50%{transform:translate(-20px, -20px) scale(1.08)}}
-    .toast{position:fixed; right:16px; bottom:16px; background:rgba(18,26,58,.9); color:var(--text); padding:12px 14px; border:1px solid rgba(255,255,255,.1); border-radius:12px; box-shadow:var(--shadow); display:none}
-    .toast.show{display:block; animation:slideIn .5s ease}
-    @keyframes slideIn{from{transform:translateY(10px); opacity:0} to{transform:none; opacity:1}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hasnain Yamin Sayyed | Cloud Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<style>
+/* General Styles */
+* {margin:0; padding:0; box-sizing:border-box; font-family:'Roboto',sans-serif;}
+body {background:#0f111a; color:#fff; scroll-behavior:smooth;}
+a {text-decoration:none; color:inherit;}
+.container {width:90%; max-width:1200px; margin:0 auto;}
+h1,h2,h3,h4 {color:#00c8ff;}
+section {padding:60px 0;}
+.section-title {text-align:center; margin-bottom:40px;}
+.section-title h2 {font-size:2.5rem; color:#00c8ff;}
+.section-title p {color:#aaa;}
+
+/* Header */
+header {text-align:center; padding:50px 0; background:linear-gradient(90deg,#0f111a,#1a1c2b);}
+header h1 {font-size:3rem;}
+header p {color:#ccc; margin-top:10px; font-size:1.2rem;}
+
+/* Navbar */
+nav {position:sticky; top:0; background:#1a1c2b; padding:15px 0; z-index:1000;}
+nav ul {display:flex; justify-content:center; flex-wrap:wrap; list-style:none; gap:20px;}
+nav ul li {display:inline;}
+nav ul li a {color:#fff; font-weight:700; padding:8px 15px; border-radius:25px; transition:0.3s;}
+nav ul li a:hover {background:#00c8ff; color:#0f111a;}
+
+/* Cards */
+.cards {display:flex; flex-wrap:wrap; gap:20px; justify-content:center;}
+.card {background:#1a1c2b; padding:20px; border-radius:15px; width:300px; transition:0.3s; cursor:pointer;}
+.card:hover {transform:translateY(-10px); box-shadow:0 0 20px #00c8ff;}
+.card h3 {margin-bottom:15px;}
+.card p {color:#ccc;}
+
+/* Skills & Languages */
+.skills {display:flex; flex-wrap:wrap; gap:15px; justify-content:center;}
+.skill {background:#272a3a; padding:10px 20px; border-radius:25px; color:#00c8ff; font-weight:700; transition:0.3s;}
+.skill:hover {background:#00c8ff; color:#0f111a;}
+
+/* About Me Card */
+.about-card {background:#1a1c2b; padding:30px; border-radius:20px; max-width:800px; margin:0 auto; box-shadow:0 0 20px #00c8ff; text-align:center; transition:0.3s;}
+.about-card:hover {transform:scale(1.02);}
+
+/* Contact */
+.contact {text-align:center;}
+.contact a {display:inline-flex; align-items:center; justify-content:center; margin:10px; padding:12px 20px; border-radius:30px; background:#00c8ff; color:#0f111a; font-weight:700; transition:0.3s; gap:10px;}
+.contact a:hover {background:#fff; color:#0f111a;}
+.contact a i {font-size:1.2rem;}
+
+/* Footer */
+footer {text-align:center; padding:20px 0; background:#1a1c2b; color:#aaa;}
+</style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <nav>
-        <div class="logo"><span class="mark"></span> <span>Hasnain Yamin Sayyed</span></div>
-        <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#education">Education</a>
-          <a href="#certifications">Certifications</a>
-          <a href="#contact" class="btn">Contact</a>
-          <a href="#" id="resumeLink" class="btn primary"><i class="fa-solid fa-file-arrow-down"></i> Resume</a>
-        </div>
-      </nav>
-    </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="orb o1"></div>
-      <div class="orb o2"></div>
-      <div class="container hero-grid">
-        <div>
-          <h1 class="reveal">Hi, I'm <span class="name">Hasnain Yamin Sayyed</span><br/>Cloud Engineer</h1>
-          <p class="subtitle reveal">I design, automate, and scale secure cloud infrastructure on AWS & Azure using Docker, Kubernetes, Terraform, Ansible, and CI/CD — backed by strong scripting in Python and modern web practices.</p>
-          <div class="badge-row reveal">
-            <span class="chip"><i class="fa-solid fa-cloud"></i> AWS & Azure</span>
-            <span class="chip"><i class="fa-solid fa-cubes"></i> Containers & K8s</span>
-            <span class="chip"><i class="fa-solid fa-gears"></i> IaC & Automation</span>
-            <span class="chip"><i class="fa-solid fa-shield-halved"></i> Security & Cost</span>
-          </div>
-          <div class="cta reveal">
-            <a href="#projects" class="btn primary"><i class="fa-solid fa-rocket"></i> View Projects</a>
-            <a href="#contact" class="btn"><i class="fa-solid fa-paper-plane"></i> Hire Me</a>
-          </div>
-          <div class="stat-grid reveal" style="margin-top:20px">
-            <div class="stat"><div class="num">3+</div><div class="lbl">Cloud Roles</div></div>
-            <div class="stat"><div class="num">10+</div><div class="lbl">Certs & Courses</div></div>
-            <div class="stat"><div class="num">15+</div><div class="lbl">Tech Skills</div></div>
-          </div>
-        </div>
-        <div class="card reveal">
-          <h3 style="margin-top:0">Profile</h3>
-          <p>Languages: English, Hindi, Marathi, Urdu, Arabic (basic)</p>
-          <div class="meta-row">
-            <span class="tag"><i class="fa-solid fa-location-dot"></i> Remote-ready</span>
-            <span class="tag"><i class="fa-solid fa-briefcase"></i> Cloud / DevOps</span>
-            <span class="tag"><i class="fa-solid fa-code"></i> Python, Web</span>
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- Header -->
+<header class="animate__animated animate__fadeInDown">
+<h1>Hasnain Yamin Sayyed</h1>
+<p>Cloud Engineer | AWS | Azure | Docker | Kubernetes</p>
+</header>
 
-    <section id="experience">
-      <div class="container">
-        <h2 class="section-title">Experience</h2>
-        <p class="section-sub">Hands-on roles across development, cloud administration, and end‑to‑end cloud engineering.</p>
-        <ol class="timeline">
-          <li class="tl-item reveal">
-            <span class="dot"></span>
-            <div class="tl-card">
-              <div class="tl-header">
-                <div class="role">Cloud Engineer — Global Soft</div>
-                <div class="meta">Jan 2024 – Feb 2025 · Remote</div>
-              </div>
-              <p>Built secure, scalable infrastructure on AWS & Azure; automated provisioning with Terraform & Ansible; implemented CI/CD for microservices on EKS/AKS; optimized cost and reliability using monitoring and right‑sizing.</p>
-              <div class="meta-row">
-                <span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">Kubernetes</span><span class="tag">Terraform</span><span class="tag">CI/CD</span>
-              </div>
-            </div>
-          </li>
-          <li class="tl-item reveal">
-            <span class="dot"></span>
-            <div class="tl-card">
-              <div class="tl-header">
-                <div class="role">AWS Administrator — Brainwave</div>
-                <div class="meta">Aug 2024 – Oct 2024 · Remote</div>
-              </div>
-              <p>Managed AWS accounts, IAM, VPC, EC2, RDS, and S3; improved backup/DR strategy; scripted automation in Python & Bash.</p>
-              <div class="meta-row">
-                <span class="tag">AWS</span><span class="tag">IAM</span><span class="tag">Networking</span><span class="tag">Automation</span>
-              </div>
-            </div>
-          </li>
-          <li class="tl-item reveal">
-            <span class="dot"></span>
-            <div class="tl-card">
-              <div class="tl-header">
-                <div class="role">Web Developer — OctaNet</div>
-                <div class="meta">Feb 2023 – Mar 2023 · Remote</div>
-              </div>
-              <p>Developed responsive web pages with clean, accessible UI and performance best practices; collaborated via Git and CI.</p>
-              <div class="meta-row">
-                <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Git</span>
-              </div>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
+<!-- Navbar / Index -->
+<nav class="animate__animated animate__fadeInDown">
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#languages">Languages</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#certifications">Certifications</a></li>
+<li><a href="#resume">Resume</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
 
-    <section id="skills">
-      <div class="container">
-        <h2 class="section-title">Technical Skills</h2>
-        <p class="section-sub">Core cloud & DevOps toolkit used in real projects.</p>
-        <div class="skill-wrap reveal">
-          <span class="skill">AWS</span>
-          <span class="skill">Azure</span>
-          <span class="skill">Docker</span>
-          <span class="skill">Kubernetes</span>
-          <span class="skill">Terraform</span>
-          <span class="skill">Ansible</span>
-          <span class="skill">CI/CD</span>
-          <span class="skill">Python</span>
-          <span class="skill">Web Designing</span>
-        </div>
-      </div>
-    </section>
+<div class="container">
 
-    <section id="projects">
-      <div class="container">
-        <h2 class="section-title">Projects</h2>
-        <p class="section-sub">Selected work demonstrating deployment automation, scalability, and reliability.</p>
-        <div class="grid cards">
-          <article class="card project reveal">
-            <h3>Cloud Migration & Cost Optimization</h3>
-            <p>Migrated a monolithic app to AWS using EC2, RDS, and S3; implemented compute scheduling and storage lifecycle rules that reduced costs by ~30% while improving resilience.</p>
-            <div class="meta-row"><span class="tag">AWS</span><span class="tag">EC2</span><span class="tag">RDS</span><span class="tag">S3</span><span class="tag">Cost Control</span></div>
-          </article>
-          <article class="card project reveal">
-            <h3>AKS/EKS Microservices Deployment</h3>
-            <p>Containerized services with Docker, orchestrated via Kubernetes on AKS/EKS, exposed with Ingress; set up GitHub Actions for CI and ArgoCD for CD with automated rollbacks.</p>
-            <div class="meta-row"><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">AKS/EKS</span><span class="tag">GitHub Actions</span><span class="tag">ArgoCD</span></div>
-          </article>
-          <article class="card project reveal">
-            <h3>Terraform + Ansible IaC Pipeline</h3>
-            <p>Provisioned VPC, subnets, and instances with Terraform; configured app servers via Ansible; implemented repeatable environments across dev/stage/prod.</p>
-            <div class="meta-row"><span class="tag">Terraform</span><span class="tag">Ansible</span><span class="tag">IaC</span><span class="tag">Automation</span></div>
-          </article>
-        </div>
-      </div>
-    </section>
+<!-- About -->
+<section id="about">
+<div class="section-title animate__animated animate__fadeInUp">
+<h2>About Me</h2>
+</div>
+<div class="about-card animate__animated animate__fadeInUp">
+<p>Hello! I am <strong>Hasnain Yamin Sayyed</strong>, a dedicated Cloud Engineer with expertise in AWS, Azure, Docker, Kubernetes, Terraform, Ansible, CI/CD, Python, and Web Designing. I have successfully worked in remote roles with <strong>Octanet</strong>, <strong>Brainwave</strong>, and <strong>Global Soft</strong>. Passionate about cloud technologies, automation, and building scalable solutions that drive business success.</p>
+</div>
+</section>
 
-    <section id="education">
-      <div class="container">
-        <h2 class="section-title">Education</h2>
-        <div class="grid cards">
-          <article class="card edu reveal">
-            <h3>B.Tech — Kalinga University</h3>
-            <p>CGPA: 7.3 · Completed 2024</p>
-          </article>
-          <article class="card edu reveal">
-            <h3>HSC — Maharashtra State Board</h3>
-            <p>2020 · 61.23%</p>
-          </article>
-          <article class="card edu reveal">
-            <h3>SSC — Maharashtra State Board</h3>
-            <p>2018 · 77.40%</p>
-          </article>
-        </div>
-      </div>
-    </section>
+<!-- Education -->
+<section id="education">
+<div class="section-title animate__animated animate__fadeInUp">
+<h2>Education</h2>
+</div>
+<div class="cards">
+<div class="card animate__animated animate__zoomIn">
+<h3>B.Tech - Kalinga University</h3>
+<p>CGPA: 7.3 | Completed: 2024</p>
+</div>
+<div class="card animate__animated animate__zoomIn animate__delay-1s">
+<h3>12th - Maharashtra State Board HSC</h3>
+<p>Percentage: 61.23% | Completed: 2020</p>
+</div>
+<div class="card animate__animated animate__zoomIn animate__delay-2s">
+<h3>SSC - Maharashtra State Board</h3>
+<p>Percentage: 77.40% | Completed: 2018</p>
+</div>
+</div>
+</section>
 
-    <section id="certifications">
-      <div class="container">
-        <h2 class="section-title">Certifications</h2>
-        <p class="section-sub">Verified links where provided. Share the rest to activate the buttons.</p>
-        <div class="grid cards">
-          <article class="card cert reveal">
-            <h3>AWS Certification</h3>
-            <p>Details/link to be added.</p>
-          </article>
-          <article class="card cert reveal">
-            <h3>Microsoft Azure Certification</h3>
-            <p>Details/link to be added.</p>
-          </article>
-          <article class="card cert reveal">
-            <h3>Linux Certification</h3>
-            <p><a href="https://drive.google.com/file/d/1QC9PAj4_fPRBbtlnzwy9Ehb6OcLeiEYC/view?usp=drivesdk" target="_blank" rel="noopener">View Certificate</a></p>
-          </article>
-          <article class="card cert reveal">
-            <h3>Networking (CCNA)</h3>
-            <p><a href="https://drive.google.com/file/d/15Tdj3-dHXZ76KkEv3xCAmDD96jlzM2uE/view?usp=drivesdk" target="_blank" rel="noopener">View Certificate</a></p>
-          </article>
-          <article class="card cert reveal">
-            <h3>Web Designing Certification</h3>
-            <p>Details/link to be added.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+<!-- Technical Skills -->
+<section id="skills">
+<div class="section-title animate__animated animate__fadeInUp">
+<h2>Technical Skills</h2>
+</div>
+<div class="skills">
+<span class="skill">AWS</span>
+<span class="skill">Azure</span>
+<span class="skill">Docker</span>
+<span class="skill">Kubernetes</span>
+<span class="skill">Terraform</span>
+<span class="skill">Ansible</span>
+<span class="skill">CI/CD</span>
+<span class="skill">Python</span>
+<span class="skill">Web Designing</span>
+</div>
+</section>
 
-    <section id="about">
-      <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <p class="section-sub">Cloud Engineer focused on reliability, cost efficiency, and clean automation.</p>
-        <div class="card reveal">
-          <p>I'm Hasnain Yamin Sayyed — a Cloud Engineer experienced across AWS and Azure with a passion for automation and practical problem‑solving. I enjoy transforming requirements into secure cloud architectures, writing infrastructure as code, and building pipelines that ship fast with confidence.</p>
-        </div>
-      </div>
-    </section>
+<!-- Languages Known -->
+<section id="languages">
+<div class="section-title animate__animated animate__fadeInUp">
+<h2>Languages Known</h2>
+</div>
+<div class="skills">
+<span class="skill">English</span>
+<span class="skill">Hindi</span>
+<span class="skill">Marathi</span>
+<span class="skill">Urdu</span>
+<span class="skill">Arabic (Basic)</span>
+</div>
+</section>
 
-    <section id="languages">
-      <div class="container">
-        <h2 class="section-title">Languages Known</h2>
-        <div class="grid" style="gap:12px">
-          <div class="lang reveal"><span>English</span><span>Fluent</span></div>
-          <div class="lang reveal"><span>Hindi</span><span>Fluent</span></div>
-          <div class="lang reveal"><span>Marathi</span><span>Fluent</span></div>
-          <div class="lang reveal"><span>Urdu</span><span>Fluent</span></div>
-          <div class="lang reveal"><span>Arabic</span><span>Basic</span></div>
-        </div>
-      </div>
-    </section>
+<!-- Experience -->
+<section id="experience">
+<div class="section-title animate__animated animate__fadeInUp">
+<h2>Experience</h2>
+</div>
+<div class="cards">
+<div class="card animate__animated animate__fadeInLeft">
+<h3>Octanet</h3>
+<p>Web Developer (Feb 2023 - Mar 2023, Remote)</p>
+<p>Internship Certificate: <a href="https://drive.google.com/file/d/1v8MTLNr5AmlI9w8pxFtkL4SGExX4qrC2/view?usp=drivesdk" target="_blank">View Certificate</a></p>
+</div>
+<div class="card animate__animated animate__fadeInLeft animate__delay-1s">
+<h3>Brainwave Company</h3>
+<p>AWS Administrator (Aug 2024 - Oct 2024, Remote)</p>
+<p>Internship Certificate: <a href="https://drive.google.com/file/d/108XSyaADCyjar9V6HSUMmz0zG-lTS3sS/view?usp=drivesdk" target="_blank">View Certificate</a></p>
+</div>
+<div class="card animate__animated animate__fadeInLeft animate__delay-2s">
+<h3>Global Soft Company</h3>
+<p>Cloud Engineer (Jan 2024 - Feb 2025)</p>
+</div>
+</div>
+</section>
 
-    <section id="contact">
-      <div class="container">
-        <h2 class="section-title">Contact</h2>
-        <p class="section-sub">Click to connect. Replace GitHub/LinkedIn links when you share them.</p>
-        <div class="contact reveal">
-          <a href="#" id="githubLink"><i class="fa-brands fa-github"></i> <span>GitHub</span></a>
-          <a href="#" id="linkedinLink"><i class="fa-brands fa-linkedin"></i> <span>LinkedIn</span></a>
-          <a href="https://wa.me/918180931372" id="whatsappLink"><i class="fa-brands fa-whatsapp"></i> <span>WhatsApp</span></a>
-          <a href="mailto:hasnainsayyed71@gmail.com" id="emailLink"><i class="fa-solid fa-envelope"></i> <span>Email</span></a>
-        </div>
-      </div>
-    </section>
-  </main>
+<!-- Projects -->
+<section id="projects">
+<div class="section-title animate__animated animate__fadeInUp">
+<h2>Projects</h2>
+</div>
+<div class="cards">
+<div class="card animate__animated animate__fadeInRight">
+<h3>Cloud Migration Dashboard</h3>
+<p>Web dashboard for monitoring and managing cloud migrations across AWS and Azure.</p>
+</div>
+<div class="card animate__animated animate__fadeInRight animate__delay-1s">
+<h3>Kubernetes Deployment Tool</h3>
+<p>Automated deployment of containerized applications on Kubernetes clusters.</p>
+</div>
+<div class="card animate__animated animate__fadeInRight animate__delay-2s">
+<h3>Cost Optimization Dashboard</h3>
+<p>Tool for tracking and optimizing cloud resource usage and cost efficiency.</p>
+</div>
+<div class="card animate__animated animate__fadeInRight animate__delay-3s">
+<h3>Language Translator (AWS Powered)</h3>
+<p>Real-time translator supporting English, Hindi, Marathi, and French. Built using AWS services for high performance and reliability.</p>
+</div>
+</div>
+</section>
 
-  <footer>
-    <div class="container">
-      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap">
-        <div>© <span id="year"></span> Hasnain Yamin Sayyed. All rights reserved.</div>
-        <div style="opacity:.8">Built with HTML • CSS • JavaScript</div>
-      </div>
-    </div>
-  </footer>
+<!-- Certifications -->
+<section id="certifications">
+<div class="section-title animate__animated animate__fadeInUp">
+<h2>Certifications</h2>
+</div>
+<div class="cards">
+<div class="card animate__animated animate__fadeInUp">
+<h3>AWS Certification</h3>
+<p><a href="https://www.credly.com/badges/772a00e9-0116-4188-b3de-70e95896722c" target="_blank">View Certificate</a></p>
+</div>
+<div class="card animate__animated animate__fadeInUp animate__delay-1s">
+<h3>Microsoft Azure</h3>
+<p><a href="https://drive.google.com/file/d/1WWIMqGEPCPqyb_3bceP86YZEo6T2wKwQ/view?usp=drivesdk" target="_blank">View Certificate</a></p>
+</div>
+<div class="card animate__animated animate__fadeInUp animate__delay-2s">
+<h3>Linux</h3>
+<p><a href="https://drive.google.com/file/d/1QC9PAj4_fPRBbtlnzwy9Ehb6OcLeiEYC/view?usp=drivesdk" target="_blank">View Certificate</a></p>
+</div>
+<div class="card animate__animated animate__fadeInUp animate__delay-3s">
+<h3>CCNA</h3>
+<p><a href="https://drive.google.com/file/d/15Tdj3-dHXZ76KkEv3xCAmDD96jlzM2uE/view?usp=drivesdk" target="_blank">View Certificate</a></p>
+</div>
+<div class="card animate__animated animate__fadeInUp animate__delay-4s">
+<h3>Web Designing</h3>
+<p><a href="https://drive.google.com/file/d/1ZA013oZ3wjNql0U-ivKPTkpskzy-yDdx/view?usp=drivesdk" target="_blank">View Certificate</a></p>
+</div>
+</div>
+</section>
 
-  <div id="toast" class="toast"><i class="fa-solid fa-circle-info"></i> Links are placeholders — share your URLs to activate.</div>
+<!-- Resume Section -->
+<section id="resume">
+<div class="section-title animate__animated animate__fadeInUp">
+<h2>Resume</h2>
+<p>Click below to view or download my professional resume.</p>
+</div>
+<div class="contact">
+<a href="https://drive.google.com/file/d/1fsMIhHqobb8Z-3K1i8hdyq20cRLuV6ie/view?pli=1" target="_blank">View Resume</a>
+</div>
+</section>
 
-  <script>
-    // Reveal on scroll
-    const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target);} }); },{threshold:0.15});
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+<!-- Contact -->
+<section id="contact">
+<div class="section-title animate__animated animate__fadeInUp">
+<h2>Contact Me</h2>
+</div>
+<div class="contact">
+<a href="https://github.com/hasnain01sayyed" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+<a href="https://linkedin.com/in/hasnain-sayyed" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+<a href="https://wa.me/918180931372" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+<a href="mailto:hasnainsayyed71@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+</div>
+</section>
 
-    // Dynamic year
-    document.getElementById('year').textContent = new Date().getFullYear();
+</div>
 
-    // Toast for placeholder links
-    const toast = document.getElementById('toast');
-    function showToast(){ toast.classList.add('show'); setTimeout(()=>toast.classList.remove('show'), 3200); }
-    function wirePlaceholder(id){ const el = document.getElementById(id); if(!el) return; el.addEventListener('click', (ev)=>{ if(el.getAttribute('href') === '#'){ ev.preventDefault(); showToast(); }}); }
-    ['resumeLink','githubLink','linkedinLink'].forEach(wirePlaceholder);
+<footer>
+<p>© 2025 Hasnain Yamin Sayyed. All Rights Reserved.</p>
+</footer>
 
-    // Helpers to set links quickly when you share them
-    function setResume(url){ document.getElementById('resumeLink').href = url; }
-    function setGitHub(url){ document.getElementById('githubLink').href = url; }
-    function setLinkedIn(url){ document.getElementById('linkedinLink').href = url; }
-    function setWhatsApp(number){ const w = document.getElementById('whatsappLink'); if(w) w.href = `https://wa.me/${number.replace(/\D/g,'')}`; }
-
-    // Expose helpers
-    window.setResume = setResume; window.setGitHub = setGitHub; window.setLinkedIn = setLinkedIn; window.setWhatsApp = setWhatsApp;
-  </script>
 </body>
 </html>
